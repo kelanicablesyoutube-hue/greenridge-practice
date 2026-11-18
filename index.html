@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greenridge Plantations | Export Crops & Landscaping in Sri Lanka</title>
+<meta name="description" content="Greenridge Plantations grows and exports Ceylon coconut, cinnamon, pepper and ornamental plants, and designs landscapes for homes, hotels and offices across Sri Lanka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-900:#12301f; --green-700:#1f5134; --green-500:#3f8a5a; --green-100:#e6f0e8;
+    --sand:#f6f1e7; --earth:#a86b3c; --ink:#1b1f1c; --muted:#5b645e; --white:#fff;
+    --radius:14px; --max:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.65}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.15;color:var(--green-900)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  section{padding:88px 0}
+  .eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--earth);font-weight:600;margin-bottom:12px}
+  .lead{color:var(--muted);font-size:18px;max-width:620px}
+  .btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:.2s}
+  .btn-primary{background:var(--earth);color:var(--white)}
+  .btn-primary:hover{background:#8f5830}
+  .btn-ghost{border:1.5px solid rgba(255,255,255,.7);color:var(--white)}
+  .btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid #e8ebe8}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:10px;font-family:Fraunces,serif;font-weight:600;font-size:20px;color:var(--green-900)}
+  .logo svg{width:30px;height:30px}
+  .nav ul{display:flex;gap:30px;list-style:none;font-size:15px;font-weight:500}
+  .nav ul a:hover{color:var(--green-500)}
+  .menu-btn{display:none;background:none;border:0;font-size:26px;cursor:pointer;color:var(--green-900)}
+
+  /* hero */
+  .hero{background:var(--green-900);color:var(--white);padding:110px 0 120px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(circle at 85% 20%,rgba(63,138,90,.55),transparent 45%),
+    radial-gradient(circle at 10% 90%,rgba(168,107,60,.35),transparent 40%)}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+  .hero h1{color:var(--white);font-size:clamp(38px,5.5vw,62px);margin-bottom:20px}
+  .hero p{color:#cfe0d4;font-size:18px;max-width:520px;margin-bottom:34px}
+  .hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-art{aspect-ratio:1;max-width:420px;justify-self:end;width:100%}
+  .stats{display:flex;gap:40px;margin-top:54px;flex-wrap:wrap}
+  .stats b{display:block;font-family:Fraunces,serif;font-size:32px;color:var(--white)}
+  .stats span{font-size:14px;color:#a9c4b1}
+
+  /* about */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .about h2{font-size:clamp(30px,4vw,42px);margin-bottom:18px}
+  .about p{color:var(--muted);margin-bottom:14px}
+  .about-card{background:var(--sand);border-radius:var(--radius);padding:36px}
+  .about-card li{list-style:none;padding:12px 0;border-bottom:1px solid #e6dccb;display:flex;gap:12px}
+  .about-card li:last-child{border:0}
+  .about-card li::before{content:"✓";color:var(--green-500);font-weight:700}
+
+  /* exports */
+  .exports{background:var(--sand)}
+  .section-head{margin-bottom:46px}
+  .section-head h2{font-size:clamp(30px,4vw,42px);margin-bottom:12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+  .card{background:var(--white);border-radius:var(--radius);padding:28px;border:1px solid #ebe4d6;transition:.25s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(18,48,31,.08)}
+  .card .icon{width:52px;height:52px;border-radius:12px;background:var(--green-100);display:grid;place-items:center;font-size:26px;margin-bottom:18px}
+  .card h3{font-size:21px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:15px}
+  .tag{display:inline-block;margin-top:14px;font-size:12px;font-weight:600;color:var(--green-700);background:var(--green-100);padding:4px 10px;border-radius:999px}
+
+  /* landscaping */
+  .land{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .steps{counter-reset:s}
+  .step{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid #eceeec}
+  .step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:Fraunces,serif;font-size:22px;color:var(--earth);min-width:38px}
+  .step h3{font-size:19px;margin-bottom:4px}
+  .step p{color:var(--muted);font-size:15px}
+  .land-box{background:var(--green-700);color:var(--white);border-radius:var(--radius);padding:40px}
+  .land-box h3{color:var(--white);font-size:26px;margin-bottom:14px}
+  .land-box ul{list-style:none;margin:18px 0 28px}
+  .land-box li{padding:8px 0;color:#d6e6da;border-bottom:1px solid rgba(255,255,255,.12)}
+
+  /* contact */
+  .contact{background:var(--green-900);color:var(--white)}
+  .contact .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:56px}
+  .contact h2{color:var(--white);font-size:clamp(30px,4vw,42px);margin-bottom:14px}
+  .contact p{color:#c3d6c8}
+  .info{margin-top:28px;display:grid;gap:14px}
+  .info div{display:flex;gap:12px;color:#e3ece5}
+  form{background:var(--white);border-radius:var(--radius);padding:32px;color:var(--ink);display:grid;gap:14px}
+  label{font-size:14px;font-weight:500}
+  input,select,textarea{width:100%;padding:12px 14px;border:1px solid #d6dbd7;border-radius:10px;font:inherit;margin-top:6px}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--green-500);border-color:transparent}
+  .err{color:#b3261e;font-size:13px;min-height:18px}
+  .ok{display:none;background:var(--green-100);color:var(--green-700);padding:12px;border-radius:10px;font-size:14px}
+
+  footer{background:#0c2215;color:#8fae98;font-size:14px;padding:28px 0}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  @media(max-width:860px){
+    .hero .wrap,.about,.land,.contact .wrap{grid-template-columns:1fr}
+    .hero-art{display:none}
+    .nav ul{display:none;position:absolute;top:68px;left:0;right:0;background:var(--white);flex-direction:column;padding:20px 24px;gap:16px;border-bottom:1px solid #e8ebe8}
+    .nav ul.open{display:flex}
+    .menu-btn{display:block}
+    section{padding:64px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap nav">
+    <a href="#" class="logo">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#1f5134"/><path d="M16 25c0-7 3-12 8-15-1 7-4 11-8 15zm0 0c0-5-2-9-7-11 0 5 3 9 7 11z" fill="#e6f0e8"/></svg>
+      Greenridge
+    </a>
+    <button class="menu-btn" aria-label="Open menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    <ul id="menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#exports">Exports</a></li>
+      <li><a href="#landscaping">Landscaping</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:#e0b48c">Kurunegala · Sri Lanka</div>
+      <h1>Grown in Ceylon.<br>Shipped to the world.</h1>
+      <p>We grow premium export crops on our own estates and design living landscapes for homes, hotels and businesses across Sri Lanka.</p>
+      <div class="actions">
+        <a href="#exports" class="btn btn-primary">View export products</a>
+        <a href="#landscaping" class="btn btn-ghost">Landscaping services</a>
+      </div>
+      <div class="stats">
+        <div><b>120+</b><span>Acres under cultivation</span></div>
+        <div><b>14</b><span>Export countries</span></div>
+        <div><b>300+</b><span>Gardens designed</span></div>
+      </div>
+    </div>
+    <svg class="hero-art" viewBox="0 0 400 400" aria-hidden="true">
+      <circle cx="200" cy="200" r="190" fill="#1f5134"/>
+      <circle cx="200" cy="200" r="140" fill="#2c6a44"/>
+      <path d="M200 330V170" stroke="#a86b3c" stroke-width="10" stroke-linecap="round"/>
+      <path d="M200 175c-10-50-50-80-110-80 25 45 60 75 110 80z" fill="#6fb487"/>
+      <path d="M200 175c10-50 50-80 110-80-25 45-60 75-110 80z" fill="#8fcaa2"/>
+      <path d="M200 240c-20-30-55-45-95-40 20 30 50 45 95 40z" fill="#4f9a6a"/>
+      <path d="M200 240c20-30 55-45 95-40-20 30-50 45-95 40z" fill="#6fb487"/>
+      <ellipse cx="200" cy="335" rx="80" ry="12" fill="#12301f" opacity=".5"/>
+    </svg>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <div class="eyebrow">About us</div>
+      <h2>Three generations of growing in the Wayamba region</h2>
+      <p>Greenridge started as a small family coconut estate. Today we farm coconut, cinnamon, pepper and ornamental plants, and we pack and ship them to buyers in Europe, the Middle East and Asia.</p>
+      <p>The same team that cares for our estates now builds gardens, so every landscape uses plants we know will thrive in Sri Lanka's climate.</p>
+    </div>
+    <div class="about-card">
+      <ul>
+        <li>Own estates, so quality is controlled from soil to shipment</li>
+        <li>Export-grade grading, packing and documentation</li>
+        <li>Phytosanitary certificates arranged for every order</li>
+        <li>Local nursery stock for landscaping projects</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="exports" class="exports">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Export products</div>
+      <h2>What we ship</h2>
+      <p class="lead">Bulk and private-label orders available. Ask for samples and current FOB prices.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="icon">🥥</div><h3>Coconut products</h3><p>Fresh husked coconuts, desiccated coconut and virgin coconut oil.</p><span class="tag">Min. order 1×20ft</span></div>
+      <div class="card"><div class="icon">🌿</div><h3>Ceylon cinnamon</h3><p>True cinnamon quills graded Alba to H2, plus cinnamon powder.</p><span class="tag">Alba · C5 · H1</span></div>
+      <div class="card"><div class="icon">⚫</div><h3>Black pepper</h3><p>Sun-dried, high-piperine pepper, whole or ground.</p><span class="tag">550 g/L density</span></div>
+      <div class="card"><div class="icon">🪴</div><h3>Ornamental plants</h3><p>Foliage plants, cuttings and tissue-culture plants for nurseries.</p><span class="tag">Phyto-certified</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="landscaping">
+  <div class="wrap land">
+    <div>
+      <div class="eyebrow">Landscaping</div>
+      <h2 style="font-size:clamp(30px,4vw,42px);margin-bottom:18px">Gardens designed to grow, not just to look good on day one</h2>
+      <div class="steps">
+        <div class="step"><div><h3>Site visit</h3><p>We check soil, sunlight, drainage and how you want to use the space.</p></div></div>
+        <div class="step"><div><h3>Design & quote</h3><p>You get a layout plan, plant list and a clear fixed price.</p></div></div>
+        <div class="step"><div><h3>Build</h3><p>Our team handles earthwork, irrigation, lawns and planting.</p></div></div>
+        <div class="step"><div><h3>Maintenance</h3><p>Optional monthly care plans keep the garden healthy.</p></div></div>
+      </div>
+    </div>
+    <div class="land-box">
+      <h3>Who we work with</h3>
+      <p style="color:#c8dccd">From a single home garden to a full hotel property.</p>
+      <ul>
+        <li>Homes and villas</li>
+        <li>Hotels and resorts</li>
+        <li>Offices and factories</li>
+        <li>Schools and public spaces</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary">Book a site visit</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:#e0b48c">Contact</div>
+      <h2>Let's talk about your order or garden</h2>
+      <p>Tell us what you need and we'll reply within one working day.</p>
+      <div class="info">
+        <div>📍 Kurunegala, North Western Province, Sri Lanka</div>
+        <div>📞 +94 77 000 0000</div>
+        <div>✉️ hello@greenridge.example</div>
+      </div>
+    </div>
+    <form id="form" novalidate>
+      <label>Name<input id="name" type="text" placeholder="Your name"></label>
+      <label>Email<input id="email" type="email" placeholder="you@company.com"></label>
+      <label>I'm interested in
+        <select id="topic">
+          <option>Export products</option>
+          <option>Landscaping</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label>Message<textarea id="msg" rows="4" placeholder="Product, quantity, country, or garden size"></textarea></label>
+      <div class="err" id="err"></div>
+      <button class="btn btn-primary" type="submit">Send enquiry</button>
+      <div class="ok" id="ok">Thanks! This is a practice site, so the message wasn't sent anywhere.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Greenridge Plantations (practice website)</span>
+    <span>Coconut · Cinnamon · Pepper · Landscaping</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => document.getElementById('menu').classList.remove('open')));
+  const form = document.getElementById('form'), err = document.getElementById('err'), ok = document.getElementById('ok');
+  form.addEventListener('input', () => { err.textContent = ''; });
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const msg = document.getElementById('msg').value.trim();
+    if (!name || !email || !msg) { err.textContent = 'Please fill in your name, email and message.'; return; }
+    if (!/^\S+@\S+\.\S+$/.test(email)) { err.textContent = 'Please enter a valid email address.'; return; }
+    ok.style.display = 'block'; form.reset();
+  });
+</script>
+</body>
